@@ -1,0 +1,66 @@
+<div class="summary-home">
+
+  <div class="user-details">
+    <h3 class="update-details-header">User Details</h3>
+    <h4>Name :
+      {{user.name}}</h4>
+    <h4>Email :
+      {{user.email}}</h4>
+    <h4>Gender :
+      {{user.gender}}</h4>
+  </div>
+  <div class="update-details">
+
+    <h3 class="update-details-header">Update Details</h3>
+    <form name="myForm" class="form-horizontal" role="form" novalidate>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="myform-username">Username:</label>
+        <div class="col-sm-8">
+          <input type="text" id="myform-username" class="form-control" placeholder="Enter username" name="user" ng-model="user.name" required>
+          <br>
+          <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+            <span ng-show="myForm.user.$error.required">Username is required.</span>
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="myform-email">Email:</label>
+        <div class="col-sm-8">
+          <input type="text" id="myform-email" class="form-control" placeholder="Enter email" name="email" ng-model="user.email" required>
+          <br>
+          <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+            <span ng-show="myForm.email.$error.required ||myForm.email.$error.invalid">Email is required.</span>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">Gender:</label>
+        <div class="col-sm-8">
+          <input type="radio" ng-model="user.gender" name="gender" value="male" ng-checked="true">
+          Male
+          <input type="radio" ng-model="user.gender" name="gender" value="female">
+          Female
+          <input type="radio" ng-model="user.gender" name="gender" value="other">
+          Other
+          <br>
+          <span style="color:red" ng-show="myForm.gender.$dirty && myForm.gender.$invalid">
+            <span ng-show="myForm.gender.$error.required">Please select gender.</span>
+          </span>
+        </div>
+
+      </div>
+      <div class="form-group" style="text-align:center">
+        <input type="submit" ng-click="update(user)" class="btn btn-primary" ng-disabled="myForm.gender.$invalid || myForm.name.$invalid || myForm.email.$invalid">
+        <input type="button" ng-click="reset()" value="Reset" class="btn btn-danger"/>
+      </div>
+    </form>
+
+  </div>
+
+</div>

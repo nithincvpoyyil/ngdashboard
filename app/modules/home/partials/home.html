@@ -1,0 +1,5 @@
+<div class="banner-logo"><h1>ngDashBoard</h1><span ng-click="logoutApp()">logout</span></div>
+<div class="home-container row">
+  <div ng-include="'home-sidebar-template.html'" class="col-md-2 home-sidebar"></div>
+  <div ui-view class="main-dashboard col-md-10"></div>
+</div>

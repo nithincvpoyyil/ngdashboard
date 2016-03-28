@@ -1,0 +1,13 @@
+<form name="loginForm" ng-submit="login(credentials)" novalidate class="login-form">
+  <h2 class="form-signin-heading">Please Sign in</h2>
+  <h5 class="form-signin-error">{{errorMessage}}</h5>
+  <div class="user-input name">
+    <label for="username"  class="sr-only">Username:</label>
+    <input type="text" id="username" ng-model="credentials.username" placeholder="User name">
+  </div>
+  <div class="user-input password">
+    <label for="password" class="sr-only">Password:</label>
+    <input type="password" id="password" ng-model="credentials.password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-lg btn-primary">Login</button>
+</form>

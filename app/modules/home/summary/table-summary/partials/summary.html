@@ -1,0 +1,20 @@
+<div id="summary-table-home" class="summary-table-home">
+  <h3>Product Sales Summary</h3>
+  <table class="table table-striped table-hover">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Products</th>
+        <th ng:repeat="months in yData.months">
+          {{months}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng:repeat="plotItem in plotData">
+        <td>{{plotItem.key}}</td>
+        <td ng:repeat="plotDataItem in plotItem.values">{{plotDataItem.y}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
